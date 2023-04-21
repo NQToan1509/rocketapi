@@ -1,10 +1,13 @@
 {
-  "name": "@rocket.chat/sdk",
+  "name": "rocket-api",
   "version": "0.2.9-1",
   "description": "Node.js SDK for Rocket.Chat. Application interface for server methods and message streams.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/RocketChat/Rocket.Chat.js.SDK.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RocketChat/Rocket.Chat.js.SDK.git"
+  },
   "author": "Tim Kinnane <tim.kinnane@rocket.chat>",
   "license": "MIT",
   "private": false,
@@ -32,7 +35,7 @@
     "test:package": "preview && mocha 'src/index.spec.ts'",
     "start": "ts-node ./src/utils/start",
     "docs": "rimraf ./docs && typedoc --options ./typedoc.json ./src/lib",
-    "js-docs": "./node_modules/.bin/docma -c docma.json",
+    "js-docs": "docma -c docma.json",
     "prebuild": "npm run test",
     "build": "rimraf ./dist/* && tsc && npm run test:package"
   },
@@ -67,7 +70,7 @@
   "dependencies": {
     "@types/lru-cache": "^4.1.0",
     "@types/node": "^9.4.6",
-    "asteroid": "rocketchat/asteroid",
+    "asteroid": "github:rocketchat/asteroid",
     "lru-cache": "^4.1.1",
     "node-rest-client": "^3.1.0"
   },
@@ -75,5 +78,12 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/RocketChat/Rocket.Chat.js.SDK/issues"
+  },
+  "homepage": "https://github.com/RocketChat/Rocket.Chat.js.SDK#readme",
+  "directories": {
+    "test": "test"
   }
 }
