@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git+https://github.com/RocketChat/Rocket.Chat.js.SDK.git"
   },
-  "author": "Tim Kinnane <tim.kinnane@rocket.chat>",
+  "author": "",
   "license": "MIT",
   "private": false,
   "keywords": [
@@ -31,6 +31,8 @@
     "pretest": "tslint -p . && ts-node src/utils/setup.ts",
     "test": "nyc mocha './src/lib/**/*.spec.ts'",
     "test:hook": "mocha './**/*.spec.ts'",
+     "dev": "node_modules/webpack/bin/webpack.js --mode production --watch --progress --hide-modules",
+    "build:": "node_modules/webpack/bin/webpack.js --mode production --progress --hide-modules",
     "test:debug": "mocha  --inspect --debug-brk 'src/**/*.spec.ts'",
     "test:package": "preview && mocha 'src/index.spec.ts'",
     "start": "ts-node ./src/utils/start",
@@ -65,7 +67,10 @@
     "tslint-config-standard": "^7.0.0",
     "typedoc": "0.8.0",
     "typedoc-plugin-external-module-name": "^1.1.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.7.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "@types/lru-cache": "^4.1.0",
