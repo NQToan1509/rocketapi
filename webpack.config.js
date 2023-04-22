@@ -1,19 +1,25 @@
-// webpack.config.js
-
-const {resolve} = require('path')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-    entry: resolve(__dirname, 'src/index.js'),
-    output: {
-        path: resolve(__dirname, 'dist'),
-        filename: 'simple-scrollspy.js',
-        library: 'scrollSpy'
-    },
-    plugins: [
-        new UglifyJsPlugin({
-            exclude: [/\.min\.js$/gi] // skip pre-minified libs
-        })
+  mode: 'production',
+  entry: './src/index.ts',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'awesome-typescript-loader',
+        exclude: /node_modules/
+      }
     ]
-}
-
+  },
+  resolve: {
+    extensions: [ '.ts', '.js' ]
+  },
+  output: {
+    filename: 'bundle.js',
+    library: 'RocketChat',
+    libraryTarget: 'umd',
+    path: path.resolve(__dirname, 'dist/')
+  }
+};

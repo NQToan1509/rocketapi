@@ -1,10 +1,10 @@
-import * as driver from './lib/driver'
-import * as methodCache from './lib/methodCache'
-import * as api from './lib/api'
 import * as settings from './lib/settings'
+import Livechat from './lib/clients/Livechat'
+import Bot from './lib/clients/Bot'
+import Rocketchat from './lib/clients/Rocketchat'
 export {
-  driver,
-  methodCache,
-  api,
-  settings
+  settings,
+  Livechat,
+  Bot,
+  Rocketchat
 }
