@@ -163,7 +163,7 @@ var ApiLivechat = /** @class */ (function (_super) {
             }
         }); });
     };
-    
+    // menthor api student customer
     ApiLivechat.prototype.student = function (_a) {
         var { email, name, isHannah, department } = _a;
         

@@ -1,5 +1,5 @@
 {
-  "name": "livechat-api",
+  "name": "funix-livechat-api",
   "version": "1.0.0-alpha.42",
   "description": "Node.js SDK for Rocket.Chat. Application interface for server methods and message streams.",
   "main": "index.js",
@@ -19,7 +19,6 @@
     "Diego Mello (https://github.com/diegolmello)"
   ],
   "license": "MIT",
-  "private": false,
   "keywords": [
     "adapter",
     "rocketchat",
@@ -48,11 +47,6 @@
     "builddist": "rimraf ./dist/* && tsc",
     "publish:prepare": "node .scripts/release.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test:hook"
-    }
-  },
   "devDependencies": {
     "@types/event-emitter": "^0.3.2",
     "@types/eventemitter3": "^2.0.2",
@@ -68,7 +62,6 @@
     "husky": "^0.14.3",
     "mocha": "^5.0.1",
     "node-fetch": "^2.2.1",
-    "node-fetch-polyfill": "^2.0.6",
     "nyc": "^11.4.1",
     "package-preview": "^1.0.5",
     "rimraf": "^2.6.2",
