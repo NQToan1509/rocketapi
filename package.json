@@ -1,5 +1,5 @@
 {
-  "name": "funix-livechat-api",
+  "name": "funix.livechat-api",
   "version": "1.0.0-alpha.42",
   "description": "Node.js SDK for Rocket.Chat. Application interface for server methods and message streams.",
   "main": "index.js",

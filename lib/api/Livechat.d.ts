@@ -20,7 +20,9 @@ export default class ApiLivechat extends ApiBase {
     updateCallStatus(callStatus: string, rid: string, callId: string): Promise<any>;
     nextAgent(department?: string): Promise<any>;
     agent({ rid }: any): Promise<any>;
-    student({ email,name,isHannah,department }: any): Promise<any>;
+    student({ name, email, isHannah, department }: any): Promise<any>;
+    findMentor({departmentId?: any, roomId?: any}): Promise<any>;
+    // createRoom({departmentId} : any): Promise<any>;
     message(id: string, params: ILivechatRoom): Promise<any>;
     sendMessage(message: INewLivechatMessageAPI): Promise<any>;
     editMessage(id: string, message: INewLivechatMessageAPI): Promise<any>;

@@ -168,6 +168,7 @@ export declare class DDPDriver extends EventEmitter implements ISocket, IDriver 
     unsubscribeAll: () => Promise<any>;
     onStreamData: (event: string, cb: ICallback) => Promise<any>;
     onMessage: (cb: ICallback) => void;
+    onMentorAccept: (menthos:string,cb: ICallback) => void;
     onTyping: (cb: ICallback) => Promise<any>;
     notifyVisitorTyping: (rid: string, username: string, typing: boolean, token: string) => Promise<any>;
     notifyCallDeclined: (rid: string) => Promise<any>;

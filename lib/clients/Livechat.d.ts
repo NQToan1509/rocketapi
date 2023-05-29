@@ -11,6 +11,13 @@ export default class LivechatClient extends LivechatRest implements ISocket {
     logger: ILogger;
     socket: Promise<ISocket | IDriver>;
     constructor({ logger, allPublic, rooms, integrationId, protocol, ...config }: any);
+    on(event: string, listener: Function);
+    once(event: string, listener: Function);
+    off(event?: string | undefined, listener?: Function | undefined);
+    emit(event: string, ...args: any[]): boolean;
+    listeners(event: string): Function[];
+    removeAllListeners(event?: string | undefined): Function[];
+    hasListeners(event: string): boolean;
     import(protocol: Protocols, config: any): void;
     connect(options: ISocketOptions, callback?: ICallback): Promise<any>;
     disconnect(): Promise<any>;
@@ -20,8 +27,10 @@ export default class LivechatClient extends LivechatRest implements ISocket {
     subscribeLoggedNotify(): Promise<any>;
     subscribeNotifyUser(): Promise<any>;
     onMessage(cb: ICallback): Promise<any>;
+    onMentorAccept(menthos:string,cb: ICallback): Promise<any>;
     onTyping(cb: ICallback): Promise<any>;
     onAgentChange(rid: string, cb: ICallback): Promise<void>;
+    onRoomChange(rid: string, cb: ICallback): Promise<void>;
     onAgentStatusChange(rid: string, cb: ICallback): Promise<void>;
     onQueuePositionChange(rid: string, cb: ICallback): Promise<void>;
     onVisitorChange(rid: string, cb: ICallback): Promise<void>;
