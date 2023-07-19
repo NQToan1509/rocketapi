@@ -10,6 +10,7 @@ export default class ApiLivechat extends ApiBase {
     config(params?: ILivechatTokenAPI): Promise<any>;
     room(params?: INewLivechatRoomCredentialAPI): Promise<any>;
     closeChat({ rid }: ILivechatRoom): Promise<any>;
+    cancelChat({ rid }: ILivechatRoom): Promise<any>;
     shareScreen({ rid, messageType }: any): Promise<any>;
     transferChat({ rid, department }: ILivechatRoom): Promise<any>;
     chatSurvey(survey: ILivechatRoomSurveyAPI): Promise<any>;
@@ -20,9 +21,11 @@ export default class ApiLivechat extends ApiBase {
     updateCallStatus(callStatus: string, rid: string, callId: string): Promise<any>;
     nextAgent(department?: string): Promise<any>;
     agent({ rid }: any): Promise<any>;
+    updateDepartment({ rid,departmentId }: any): Promise<any>;
     student({ name, email, isHannah, department }: any): Promise<any>;
-    findMentor({departmentId?: any, roomId?: any}): Promise<any>;
-    // createRoom({departmentId} : any): Promise<any>;
+    getMentorSubject(departmentId?:any): Promise<any>;
+    findMentorFunix({departmentId, rid, agents}:any): Promise<any>;
+    addblock({ checkAddBlock, rid }:any): Promise<any>;
     message(id: string, params: ILivechatRoom): Promise<any>;
     sendMessage(message: INewLivechatMessageAPI): Promise<any>;
     editMessage(id: string, message: INewLivechatMessageAPI): Promise<any>;
@@ -35,4 +38,5 @@ export default class ApiLivechat extends ApiBase {
     sendCustomField(field: INewLivechatCustomFieldAPI): Promise<any>;
     sendCustomFields(fields: INewLivechatCustomFieldsAPI): Promise<any>;
     uploadFile(params: ILivechatUploadAPI): Promise<any>;
+    hangding(params: any): Promise<any>
 }

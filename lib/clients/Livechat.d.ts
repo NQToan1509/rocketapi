@@ -30,7 +30,7 @@ export default class LivechatClient extends LivechatRest implements ISocket {
     onMentorAccept(menthos:string,cb: ICallback): Promise<any>;
     onTyping(cb: ICallback): Promise<any>;
     onAgentChange(rid: string, cb: ICallback): Promise<void>;
-    onRoomChange(rid: string, cb: ICallback): Promise<void>;
+    onMentorAction(rid: string, cb: ICallback): Promise<void>;
     onAgentStatusChange(rid: string, cb: ICallback): Promise<void>;
     onQueuePositionChange(rid: string, cb: ICallback): Promise<void>;
     onVisitorChange(rid: string, cb: ICallback): Promise<void>;
