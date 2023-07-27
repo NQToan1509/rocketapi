@@ -15,6 +15,7 @@ export default class ApiLivechat extends ApiBase {
     transferChat({ rid, department }: ILivechatRoom): Promise<any>;
     chatSurvey(survey: ILivechatRoomSurveyAPI): Promise<any>;
     visitor(): Promise<any>;
+    rate({rid,rate,helpful}:any):Promise<any>;
     grantVisitor(guest: INewLivechatGuestAPI): Promise<any>;
     deleteVisitor(): Promise<any>;
     updateVisitorStatus(status: string): Promise<any>;
