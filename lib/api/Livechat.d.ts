@@ -21,7 +21,8 @@ export default class ApiLivechat extends ApiBase {
     updateCallStatus(callStatus: string, rid: string, callId: string): Promise<any>;
     nextAgent(department?: string): Promise<any>;
     agent({ rid }: any): Promise<any>;
-    updateDepartment({ rid,departmentId }: any): Promise<any>;
+    historyStudent(data:any): Promise<any>;
+    updateDepartment({ rid, departmentId }: any): Promise<any>;
     student({ name, email, isHannah, department }: any): Promise<any>;
     getMentorSubject(departmentId?:any): Promise<any>;
     findMentorFunix({departmentId, rid, agents}:any): Promise<any>;
